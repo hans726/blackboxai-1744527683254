@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Link Tracker</h1>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 max-w-2xl mx-auto">
+            <h2 class="text-xl font-semibold mb-4">Create Tracking Link</h2>
+            <form id="linkForm" class="space-y-4">
+                <div>
+                    <label for="linkName" class="block text-sm font-medium text-gray-700">Link Name</label>
+                    <input type="text" id="linkName" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border">
+                </div>
+                <div>
+                    <label for="destinationUrl" class="block text-sm font-medium text-gray-700">Destination URL</label>
+                    <input type="url" id="destinationUrl" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Generate Tracking Link
+                </button>
+            </form>
+            
+            <div id="resultContainer" class="mt-6 hidden">
+                <h3 class="text-lg font-medium mb-2">Your Tracking Link:</h3>
+                <div class="flex items-center space-x-2">
+                    <input id="trackingLink" type="text" readonly class="flex-1 rounded-md border-gray-300 shadow-sm p-2 border">
+                    <button onclick="copyToClipboard()" class="bg-gray-200 hover:bg-gray-300 p-2 rounded">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+                <div id="dashboardLink" class="mt-4 text-center">
+                    <a href="#" class="text-blue-600 hover:underline">View Tracking Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="tracker.js"></script>
+</body>
+</html>
